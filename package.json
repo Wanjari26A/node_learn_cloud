@@ -18,5 +18,10 @@
   "homepage": "https://github.com/Wanjari26A/node_learn_cloud#readme",
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0",
+    "should": "^13.2.3",
+    "supertest": "^6.3.3"
   }
 }
