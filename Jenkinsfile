@@ -26,15 +26,15 @@ pipeline{
         //     }
         // }
 
-        stage ("copy file")
-        {
-            steps
-            {
-                script{
-                    cp sometestFolder/configuration_main.json configuration.json
-                }
-            }
-        }
+        // stage ("copy file")
+        // {
+        //     steps
+        //     {
+        //         script{
+        //             cp sometestFolder/configuration_main.json configuration.json
+        //         }
+        //     }
+        // }
 
         stage ("read file")
         {
