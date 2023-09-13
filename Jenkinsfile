@@ -31,11 +31,14 @@ pipeline{
             steps
             {
                 script{
-                    def sourceData = readFile(file: 'test-server/configure/sourceFile.json')
-                    println(sourceData)
+                    dir('learnJenkins')
+                    {
+                        def sourceData = readFile(file: 'test-server/configure/sourceFile.json')
+                        println(sourceData)
 
-                    def destonationData = readFile(file: 'test-server/configuration.json')
-                    println(destonationData)
+                        def destonationData = readFile(file: 'test-server/configuration.json')
+                        println(destonationData)
+                    }
                 }
             }
         }
@@ -45,8 +48,11 @@ pipeline{
             steps
             {
                 script{
-                    def data = readFile(file: 'test-server/configure/sourceFile.json')
-                    writeFile(file: 'test-server/configuration.json', text: data)
+                    dir('learnJenkins')
+                    {
+                        def data = readFile(file: 'test-server/configure/sourceFile.json')
+                        writeFile(file: 'test-server/configuration.json', text: data)
+                    }
                 }
             }
         }
@@ -56,11 +62,14 @@ pipeline{
             steps
             {
                 script{
-                    def sourceData = readFile(file: 'test-server/configure/sourceFile.json')
-                    println(sourceData)
+                    dir('learnJenkins')
+                    {
+                        def sourceData = readFile(file: 'test-server/configure/sourceFile.json')
+                        println(sourceData)
 
-                    def destonationData = readFile(file: 'test-server/configuration.json')
-                    println(destonationData)
+                        def destonationData = readFile(file: 'test-server/configuration.json')
+                        println(destonationData)
+                    }
                 }
             }
         }
