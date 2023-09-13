@@ -26,6 +26,20 @@ pipeline{
         //     }
         // }
 
+        stage ("read file 1st ")
+        {
+            steps
+            {
+                script{
+                    def data = readFile(file: 'sometestFolder/configuration_main.json')
+                    println(data)
+
+                    def data_1 = readFile(file: 'configuration.json')
+                    println(data_1)
+                }
+            }
+        }
+
         stage ("copy file")
         {
             steps
@@ -34,15 +48,14 @@ pipeline{
                     def data = readFile(file: 'configuration.json')
 
                     def data_1 = readFile(file: 'sometestFolder/configuration_main.json')
-                    println(data_1)
-                    
+
                     writeFile(file: 'sometestFolder/configuration_main.json', text: data)
                     sh "ls -l"
                 }
             }
         }
 
-        stage ("read file")
+        stage ("read file 2nd ")
         {
             steps
             {
