@@ -31,7 +31,7 @@ pipeline{
             steps
             {
                 cat configuration.json
-                cp sometestFolder\\configuration_main.json configuration.json
+                cp sometestFolder/configuration_main.json configuration.json
                 cat configuration.json
             }
         }
