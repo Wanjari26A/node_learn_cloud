@@ -26,15 +26,21 @@ pipeline{
         //     }
         // }
 
-        // stage ("copy file")
-        // {
-        //     steps
-        //     {
-        //         script{
-        //             cp sometestFolder/configuration_main.json configuration.json
-        //         }
-        //     }
-        // }
+        stage ("copy file")
+        {
+            steps
+            {
+                script{
+                    def data = readFile(file: 'configuration.json')
+
+                    def data_1 = readFile(file: 'sometestFolder/configuration_main.json')
+                    println(data_1)
+                    
+                    writeFile(file: 'sometestFolder/configuration_main.json', text: data)
+                    sh "ls -l"
+                }
+            }
+        }
 
         stage ("read file")
         {
