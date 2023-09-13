@@ -41,8 +41,11 @@ pipeline{
             steps
             {
                 script{
-                    def data = readFile(file: 'configuration.json')
+                    def data = readFile(file: 'sometestFolder/configuration_main.json')
                     println(data)
+
+                    def data_1 = readFile(file: 'configuration.json')
+                    println(data_1)
                 }
             }
         }
