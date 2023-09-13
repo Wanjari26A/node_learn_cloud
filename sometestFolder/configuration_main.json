@@ -1,0 +1,8 @@
+{
+    "apps": [
+      {
+        "name": "MyApp_2",
+        "script": "main_2.js"
+      }
+    ]
+  }

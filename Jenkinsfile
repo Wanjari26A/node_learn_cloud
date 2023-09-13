@@ -25,5 +25,15 @@ pipeline{
         //         bat 'pm2 startOrRestart pm2.config.json'
         //     }
         // }
+
+        stage ("Upload Configuration to Target Instance")
+        {
+            steps
+            {
+                cat configuration.json
+                cp sometestFolder\configuration_main.json configuration.json
+                cat configuration.json
+            }
+        }
     }
 }
