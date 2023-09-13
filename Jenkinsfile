@@ -31,11 +31,11 @@ pipeline{
             steps
             {
                 script{
-                    def data = readFile(file: 'sometestFolder/configuration_main.json')
-                    println(data)
+                    def sourceData = readFile(file: 'test-server/configure/sourceFile.json')
+                    println(sourceData)
 
-                    def data_1 = readFile(file: 'configuration.json')
-                    println(data_1)
+                    def destonationData = readFile(file: 'test-server/configuration.json')
+                    println(destonationData)
                 }
             }
         }
@@ -45,12 +45,8 @@ pipeline{
             steps
             {
                 script{
-                    def data = readFile(file: 'configuration.json')
-
-                    def data_1 = readFile(file: 'sometestFolder/configuration_main.json')
-
-                    writeFile(file: 'sometestFolder/configuration_main.json', text: data)
-                    sh "ls -l"
+                    def data = readFile(file: 'test-server/configure/sourceFile.json')
+                    writeFile(file: 'test-server/configuration.json', text: data)
                 }
             }
         }
@@ -60,11 +56,11 @@ pipeline{
             steps
             {
                 script{
-                    def data = readFile(file: 'sometestFolder/configuration_main.json')
-                    println(data)
+                    def sourceData = readFile(file: 'test-server/configure/sourceFile.json')
+                    println(sourceData)
 
-                    def data_1 = readFile(file: 'configuration.json')
-                    println(data_1)
+                    def destonationData = readFile(file: 'test-server/configuration.json')
+                    println(destonationData)
                 }
             }
         }
