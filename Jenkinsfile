@@ -26,14 +26,23 @@ pipeline{
         //     }
         // }
 
-        stage ("Upload Configuration to Target Instance")
+        stage ("copy file")
         {
             steps
             {
                 script{
-                    cat configuration.json
                     cp sometestFolder/configuration_main.json configuration.json
-                    cat configuration.json
+                }
+            }
+        }
+
+        stage ("read file")
+        {
+            steps
+            {
+                script{
+                    def data = readFile(file: 'configuration.json')
+                    println(data)
                 }
             }
         }
