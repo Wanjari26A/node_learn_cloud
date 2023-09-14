@@ -35,7 +35,10 @@ pipeline{
                     {
                         def sourceData = readFile(file: 'test-server/configure/sourceFile.json')
                         println(sourceData)
+                    }
 
+                    dir('originalConfig')
+                    {
                         def destonationData = readFile(file: 'test-server/configuration.json')
                         println(destonationData)
                     }
@@ -48,9 +51,14 @@ pipeline{
             steps
             {
                 script{
+                    def data
                     dir('learnJenkins')
                     {
-                        def data = readFile(file: 'test-server/configure/sourceFile.json')
+                        data = readFile(file: 'test-server/configure/sourceFile.json')
+                    }
+
+                    dir('originalConfig')
+                    {
                         writeFile(file: 'test-server/configuration.json', text: data)
                     }
                 }
@@ -66,7 +74,10 @@ pipeline{
                     {
                         def sourceData = readFile(file: 'test-server/configure/sourceFile.json')
                         println(sourceData)
+                    }
 
+                    dir('originalConfig')
+                    {
                         def destonationData = readFile(file: 'test-server/configuration.json')
                         println(destonationData)
                     }
