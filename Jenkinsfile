@@ -51,7 +51,7 @@ pipeline{
             steps
             {
                 script{
-                    def data
+                    def data = 'temp'
                     dir('learnJenkins')
                     {
                         data = readFile(file: 'test-server/configure/sourceFile.json')
