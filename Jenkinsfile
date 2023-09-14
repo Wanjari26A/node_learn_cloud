@@ -39,7 +39,7 @@ pipeline{
 
                     dir('originalConfig')
                     {
-                        def destonationData = readFile(file: 'test-server/configuration.json')
+                        def destonationData = readFile(file: 'configuration.json')
                         println(destonationData)
                     }
                 }
@@ -59,7 +59,7 @@ pipeline{
 
                     dir('originalConfig')
                     {
-                        writeFile(file: 'test-server/configuration.json', text: data)
+                        writeFile(file: 'configuration.json', text: data)
                     }
                 }
             }
@@ -78,7 +78,7 @@ pipeline{
 
                     dir('originalConfig')
                     {
-                        def destonationData = readFile(file: 'test-server/configuration.json')
+                        def destonationData = readFile(file: 'configuration.json')
                         println(destonationData)
                     }
                 }
