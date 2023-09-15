@@ -74,7 +74,7 @@ pipeline{
                     {
                         echo "env parameter reading as : ${params.ENVIRONMENT}"
                         echo "env parameter reading as : ${ENVIRONMENT}"
-                        def sourceData = readFile(file: 'test-server/configure/sourceFile.json')
+                        def sourceData = readFile(file: 'test-server/configure/sourceFile_\${params.ENVIRONMENT}.json')
                         println(sourceData)
                     }
 
