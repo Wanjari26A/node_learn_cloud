@@ -33,7 +33,7 @@ pipeline{
                 script{
                     dir('learnJenkins')
                     {
-                        def sourceData = readFile(file: 'test-server/configure/sourceFile.json')
+                        def sourceData = readFile(file: "test-server/configure/sourceFile_${params.ENVIRONMENT}.json")
                         println(sourceData)
                     }
 
@@ -54,7 +54,7 @@ pipeline{
                     def data = 'some temp value which wil override in next dir read step'
                     dir('learnJenkins')
                     {
-                        data = readFile(file: 'test-server/configure/sourceFile.json')
+                        data = readFile(file: "test-server/configure/sourceFile_${params.ENVIRONMENT}.json")
                     }
 
                     dir('originalConfig')
