@@ -72,6 +72,8 @@ pipeline{
                 script{
                     dir('learnJenkins')
                     {
+                        echo "env parameter reading as : ${params.ENVIRONMENT}"
+                        echo "env parameter reading as : ${ENVIRONMENT}"
                         def sourceData = readFile(file: 'test-server/configure/sourceFile.json')
                         println(sourceData)
                     }
